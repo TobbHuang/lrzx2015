@@ -34,6 +34,10 @@
             android:name="com.example.hometeacher.activity.LoginActivity"
             android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>
+        <activity
+            android:name="com.example.hometeacher.activity.RegisterActivity"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

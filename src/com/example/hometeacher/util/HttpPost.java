@@ -8,11 +8,22 @@ import java.net.URL;
 import java.net.URLConnection;
 
 public class HttpPost {
-	public static String sendPost(String url, String param) {
+	public static String sendPost(String url, String json, String transCode) {
 		PrintWriter out = null;
 		BufferedReader in = null;
-		String result = "";
+		String result="";
 		try {
+
+			String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+					+ "<TransData><BaseInfo><TransType></TransType><TransCode>"
+					+ transCode
+					+ "</TransCode>"
+					+ "<SubTransCode>02</SubTransCode><UserName></UserName><Password></Password>"
+					+ "<ResultCode></ResultCode><ResultMsg></ResultMsg></BaseInfo><InputData>"
+					+ json + "</InputData>ss</TransData>";
+			String param = null;
+			param = ZipCompress.zipCompressBase64Encoding(xml);
+			
 			URL realUrl = new URL(url);
 			URLConnection conn = realUrl.openConnection();
 
@@ -35,21 +46,22 @@ public class HttpPost {
 			while ((line = in.readLine()) != null) {
 				result += line;
 			}
+			result = ZipDecompress.zipDecompressBase64Decoding(result);
+			out.close();
+			in.close();
 		} catch (Exception e) {
-			System.out.println("出现异常！" + e);
 			e.printStackTrace();
-		} finally {
+			result="error";
+			out.close();
 			try {
-				if (out != null) {
-					out.close();
-				}
-				if (in != null) {
-					in.close();
-				}
-			} catch (IOException ex) {
-				ex.printStackTrace();
+				in.close();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
 			}
 		}
+		
+
 		return result;
 	}
 }

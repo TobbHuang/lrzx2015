@@ -20,16 +20,17 @@
             android:textSize="20sp" />
 
         <RelativeLayout
+            android:id="@+id/rl_login_register"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp" >
+            android:background="@drawable/selector_drawable_theme_lighttheme" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="前往注册"
+                android:text=" 前往注册 "
                 android:textColor="@color/white"
                 android:textSize="15sp" />
         </RelativeLayout>
@@ -113,7 +114,6 @@
             android:text="忘记密码?"
             android:textColor="@color/theme"
             android:textSize="15sp" />
-
     </LinearLayout>
 
 </LinearLayout>

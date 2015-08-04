@@ -6,7 +6,6 @@ import java.util.HashMap;
 import com.example.hometeacher.R;
 import com.example.hometeacher.adapter.MaingoodteacherAdapter;
 import com.example.hometeacher.data.Data;
-import com.example.hometeacher.util.CodeDecompress;
 import com.example.hometeacher.util.HttpPost;
 
 import android.annotation.SuppressLint;

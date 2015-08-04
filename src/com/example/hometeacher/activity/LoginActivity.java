@@ -1,12 +1,16 @@
 package com.example.hometeacher.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View.OnClickListener;
+import android.view.View;
 import android.view.Window;
+import android.widget.RelativeLayout;
 
 import com.example.hometeacher.R;
-import com.example.hometeacher.util.CodeDecompress;
+import com.example.hometeacher.data.Data;
 import com.example.hometeacher.util.HttpPost;
 import com.example.hometeacher.util.ZipCompress;
 import com.example.hometeacher.util.ZipDecompress;
@@ -18,10 +22,33 @@ public class LoginActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_login);
+		
+		initView();
 
-		new UserLoginTask().execute((Void)null);
+		//new UserLoginTask().execute((Void)null);
 		
 	}
+	
+	private void initView() {
+		// TODO Auto-generated method stub
+		RelativeLayout rl_register=(RelativeLayout)findViewById(R.id.rl_login_register);
+		rl_register.setOnClickListener(onClickListener);
+	}
+
+	OnClickListener onClickListener=new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			Intent intent;
+			switch(v.getId()){
+			case R.id.rl_login_register:
+				intent=new Intent(LoginActivity.this,RegisterActivity.class);
+				startActivity(intent);
+				break;
+			}
+		}
+	};
 
 	public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 		
@@ -34,28 +61,7 @@ public class LoginActivity extends Activity {
 		protected Boolean doInBackground(Void... params) {
 			// TODO: attempt authentication against a network service.
 
-			try {
-				String json = "{\"account\":\"18349342287\",\"密码\":\"123456\",\"smsCode\":\"620414\"}";
-				String url = "http://192.168.1.108:8080/ZJJ/callServiceAndroid.do";
-				String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-						+ "<TransData><BaseInfo><TransType></TransType><TransCode>10001</TransCode>"
-						+ "<SubTransCode>02</SubTransCode><UserName></UserName><Password></Password>"
-						+ "<ResultCode></ResultCode><ResultMsg></ResultMsg></BaseInfo><InputData>"
-						+ json + "</InputData>ss</TransData>";
-				 
-				System.out.println("xml1:" + xml);
-				xml = ZipCompress.zipCompressBase64Encoding(xml);
-				System.out.println("xml2:" + xml);
-
-				result = HttpPost.sendPost(url, xml);
-				System.out.println("result1:" + result);
-
-				result = ZipDecompress.zipDecompressBase64Decoding(result);
-
-				System.out.println("result2:" + result);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			
 
 			// TODO: register the new account here.
 			return true;
