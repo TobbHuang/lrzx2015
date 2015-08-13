@@ -1,8 +1,12 @@
 package com.example.hometeacher.fragment;
 
 import com.example.hometeacher.R;
+import com.example.hometeacher.activity.AccountManageActivity;
+import com.example.hometeacher.activity.BillActivity;
 import com.example.hometeacher.activity.LoginActivity;
 import com.example.hometeacher.activity.MainActivity;
+import com.example.hometeacher.activity.TimetableActivity;
+import com.example.hometeacher.activity.WalletActivity;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -66,23 +70,23 @@ public class NavigationDrawerFragment extends Fragment {
 				closeDrawer();
 				break;
 			case R.id.ll_leftmenu_wallet:
-				Toast.makeText(getActivity(), "wallet", Toast.LENGTH_SHORT)
-						.show();
+				intent=new Intent(getActivity(),WalletActivity.class);
+				startActivity(intent);
 				closeDrawer();
 				break;
 			case R.id.ll_leftmenu_bill:
-				Toast.makeText(getActivity(), "bill", Toast.LENGTH_SHORT)
-						.show();
+				intent=new Intent(getActivity(),BillActivity.class);
+				startActivity(intent);
 				closeDrawer();
 				break;
 			case R.id.ll_leftmenu_timetable:
-				Toast.makeText(getActivity(), "timetable", Toast.LENGTH_SHORT)
-						.show();
+				intent=new Intent(getActivity(),TimetableActivity.class);
+				startActivity(intent);
 				closeDrawer();
 				break;
 			case R.id.ll_leftmenu_account:
-				Toast.makeText(getActivity(), "account", Toast.LENGTH_SHORT)
-						.show();
+				intent=new Intent(getActivity(),AccountManageActivity.class);
+				startActivity(intent);
 				closeDrawer();
 				break;
 			case R.id.ll_leftmenu_aboutus:

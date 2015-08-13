@@ -1,22 +1,16 @@
 package com.example.hometeacher.activity;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.example.hometeacher.R;
 import com.example.hometeacher.data.Data;
+import com.example.hometeacher.util.Encrypt;
 import com.example.hometeacher.util.HttpPost;
 import com.example.hometeacher.util.ParseXML;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -43,7 +37,8 @@ public class RegisterActivity extends Activity {
 
 	TimeHandler timeHandler;
 	KeyHandler keyHandler;
-	RegisterHandler registerHandler;
+	CheckcodeHandler checkcodeHandler;
+	SetpswHandler setpswHandler = new SetpswHandler();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +70,7 @@ public class RegisterActivity extends Activity {
 
 		timeHandler = new TimeHandler();
 		keyHandler = new KeyHandler();
-		registerHandler = new RegisterHandler();
+		checkcodeHandler = new CheckcodeHandler();
 
 	}
 
@@ -100,17 +95,19 @@ public class RegisterActivity extends Activity {
 				}
 				break;
 			case R.id.btn_register_register:
-				String password = et_password.getText().toString();
 				String key = et_key.getText().toString();
-				if (password.length() < 6) {
-					Toast.makeText(RegisterActivity.this, "密码不能少于6位",
-							Toast.LENGTH_SHORT).show();
-				} else if (key.length() != 6) {
+				if (key.length() != 6) {
 					Toast.makeText(RegisterActivity.this, "请输入正确的验证码",
+							Toast.LENGTH_SHORT).show();
+				} else if (et_phone.getText().toString().length() != 11) {
+					Toast.makeText(RegisterActivity.this, "请输入正确的手机号",
+							Toast.LENGTH_SHORT).show();
+				} else if (et_password.getText().toString().length() < 6) {
+					Toast.makeText(RegisterActivity.this, "密码不能少于6位",
 							Toast.LENGTH_SHORT).show();
 				} else {
 					progressDialog.show();
-					new Thread(r_register).start();
+					new Thread(r_checkcode).start();
 				}
 				break;
 			case R.id.tv_register_law:
@@ -159,16 +156,16 @@ public class RegisterActivity extends Activity {
 				jsn.put("account", et_phone.getText().toString());
 				jsn.put("templateId", "10849");
 
-				String result = HttpPost.sendPost(Data.URL, jsn.toString(), "10001");
+				String result = HttpPost.sendPost(Data.URL, jsn.toString(),
+						"10001");
 
-				System.out.println("result:" + result);
-				ParseXML.parseXml(result);
+				result = ParseXML.parseXml(result);
 
-//				Message msg = new Message();
-//				Bundle b = new Bundle();
-//				b.putString("result", result);
-//				msg.setData(b);
-//				keyHandler.sendMessage(msg);
+				Message msg = new Message();
+				Bundle b = new Bundle();
+				b.putString("result", result);
+				msg.setData(b);
+				keyHandler.sendMessage(msg);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -176,43 +173,58 @@ public class RegisterActivity extends Activity {
 
 	};
 
-	Runnable r_register = new Runnable() {
+	Runnable r_checkcode = new Runnable() {
 
 		@Override
 		public void run() {
 			// TODO Auto-generated method stub
-//			List<NameValuePair> params = new ArrayList<NameValuePair>();
-//			params.add(new BasicNameValuePair("Request", "SignUp"));
-//			params.add(new BasicNameValuePair("Phone", et_phone.getText()
-//					.toString()));
-//			// �ֻ���+���� MD5��ϼ���
-//			params.add(new BasicNameValuePair("Password", Encrypt.MD5(et_phone
-//					.getText().toString() + et_password.getText().toString())));
-//			params.add(new BasicNameValuePair("Code", et_key.getText()
-//					.toString()));
-//
-//			String result = new HttpPostConnection("SignServer", params)
-//					.httpConnection();
-//
-//			if (result.equals("timeout")) {
-//				JSONObject json = new JSONObject();
-//				try {
-//					json.put("Result", "timeout");
-//					result = json.toString();
-//				} catch (JSONException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//			}
-//
-//			Message msg = new Message();
-//			Bundle b = new Bundle();
-//			b.putString("result", result);
-//			msg.setData(b);
-//			registerHandler.sendMessage(msg);
+			try {
+				JSONObject jsn = new JSONObject();
+				jsn.put("account", et_phone.getText().toString());
+				jsn.put("smsCode", et_key.getText().toString());
 
+				String result = HttpPost.sendPost(Data.URL, jsn.toString(),
+						"10002");
+
+				result = ParseXML.parseXml(result);
+
+				Message msg = new Message();
+				Bundle b = new Bundle();
+				b.putString("result", result);
+				msg.setData(b);
+				checkcodeHandler.sendMessage(msg);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 
+	};
+
+	Runnable r_setPsw = new Runnable() {
+
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			try {
+				JSONObject jsn = new JSONObject();
+				jsn.put("account", et_phone.getText().toString());
+				jsn.put("password",
+						Encrypt.MD5(et_password.getText().toString()));
+
+				String result = HttpPost.sendPost(Data.URL, jsn.toString(),
+						"10003");
+
+				result = ParseXML.parseXml(result);
+
+				Message msg = new Message();
+				Bundle b = new Bundle();
+				b.putString("result", result);
+				msg.setData(b);
+				setpswHandler.sendMessage(msg);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	};
 
 	@SuppressLint("HandlerLeak")
@@ -225,17 +237,16 @@ public class RegisterActivity extends Activity {
 			super.handleMessage(msg);
 
 			if (i > 0) {
-				// btn_sendkey.setBackgroundColor(getResources().getColor(
-				// R.color.grey));
-				// btn_sendkey.setTextColor(getResources().getColor(
-				// R.color.darkGrey));
-				btn_sendkey.setText("重新发送(" + i + "s)");
+				btn_sendkey.setBackgroundResource(R.drawable.shape_registerkey);
+				btn_sendkey
+						.setTextColor(getResources().getColor(R.color.white));
+				btn_sendkey.setText(i + "s");
 			} else {
-				// btn_sendkey.setBackgroundDrawable(getResources().getDrawable(
-				// R.drawable.selector_drawable_register_sendkey));
+				btn_sendkey.setBackgroundResource(R.drawable.shape_registerkey);
+				btn_sendkey
+						.setTextColor(getResources().getColor(R.color.white));
 				btn_sendkey.setClickable(true);
-				btn_sendkey.setText("重新发送");
-				// btn_sendkey.setTextColor(getResources().getColor(R.color.blue));
+				btn_sendkey.setText("发送验证码");
 			}
 
 		}
@@ -247,36 +258,71 @@ public class RegisterActivity extends Activity {
 		public void handleMessage(Message msg) {
 			// TODO Auto-generated method stub
 			super.handleMessage(msg);
-
-			Bundle b = msg.getData();
-			JSONObject json;
-			String result = null;
 			try {
-				json = new JSONObject(b.getString("result"));
-				result = json.getString("Result");
-			} catch (JSONException e) {
+				if (msg.getData().getString("result").equals("error")) {
+					Toast.makeText(RegisterActivity.this, "网络出现问题了",
+							Toast.LENGTH_SHORT).show();
+					return;
+				}
+
+				JSONObject json = new JSONObject(msg.getData().getString(
+						"result"));
+				JSONObject resultJsn = json.getJSONObject("result");
+
+				if (resultJsn.getString("flag").equals("0")) {
+					new Thread(r_time).start();
+				} else {
+					Toast.makeText(RegisterActivity.this,
+							resultJsn.getString("msg"), Toast.LENGTH_SHORT)
+							.show();
+					btn_sendkey.setClickable(true);
+				}
+
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}
+	}
 
-			if (result.equals("��֤���ѷ���")) {
-				Toast.makeText(RegisterActivity.this, result,
-						Toast.LENGTH_SHORT).show();
-				new Thread(r_time).start();
-			} else if (result.equals("��֤�뷢��ʧ��")) {
-				Toast.makeText(RegisterActivity.this, result,
-						Toast.LENGTH_SHORT).show();
-			} else {
-				Toast.makeText(RegisterActivity.this,
-						"��֤���ŷ���ʧ�ܣ�����������������", Toast.LENGTH_SHORT)
-						.show();
+	@SuppressLint("HandlerLeak")
+	class CheckcodeHandler extends Handler {
+		@Override
+		public void handleMessage(Message msg) {
+			// TODO Auto-generated method stub
+			super.handleMessage(msg);
+
+			// progressDialog.dismiss();
+
+			try {
+				if (msg.getData().getString("result").equals("error")) {
+					Toast.makeText(RegisterActivity.this, "网络出现问题了",
+							Toast.LENGTH_SHORT).show();
+					progressDialog.dismiss();
+					return;
+				}
+
+				JSONObject json = new JSONObject(msg.getData().getString(
+						"result"));
+				JSONObject resultJsn = json.getJSONObject("result");
+
+				if (resultJsn.getString("flag").equals("0")) {
+					new Thread(r_setPsw).start();
+				} else {
+					Toast.makeText(RegisterActivity.this,
+							resultJsn.getString("msg"), Toast.LENGTH_SHORT)
+							.show();
+					progressDialog.dismiss();
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 
 		}
 	}
 
-	@SuppressLint("HandlerLeak")
-	class RegisterHandler extends Handler {
+	class SetpswHandler extends Handler {
 		@Override
 		public void handleMessage(Message msg) {
 			// TODO Auto-generated method stub
@@ -284,33 +330,30 @@ public class RegisterActivity extends Activity {
 
 			progressDialog.dismiss();
 
-			Bundle b = msg.getData();
-			JSONObject json;
-			String result = null;
 			try {
-				json = new JSONObject(b.getString("result"));
-				result = json.getString("Result");
-			} catch (JSONException e) {
+				if (msg.getData().getString("result").equals("error")) {
+					Toast.makeText(RegisterActivity.this, "网络出现问题了",
+							Toast.LENGTH_SHORT).show();
+					return;
+				}
+
+				JSONObject json = new JSONObject(msg.getData().getString(
+						"result"));
+				JSONObject resultJsn = json.getJSONObject("result");
+
+				if (resultJsn.getString("flag").equals("0")) {
+					Toast.makeText(RegisterActivity.this, "注册成功",
+							Toast.LENGTH_SHORT).show();
+					finish();
+				} else {
+					Toast.makeText(RegisterActivity.this,
+							resultJsn.getString("msg"), Toast.LENGTH_SHORT)
+							.show();
+				}
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
-			Toast.makeText(RegisterActivity.this, result, Toast.LENGTH_SHORT)
-					.show();
-
-			if (result.equals("ע��ɹ�")) {
-				Toast.makeText(RegisterActivity.this, result,
-						Toast.LENGTH_SHORT).show();
-				finish();
-			} else if (result.equals("timeout")) {
-				Toast.makeText(RegisterActivity.this,
-						"��֤���ŷ���ʧ�ܣ�����������������", Toast.LENGTH_SHORT)
-						.show();
-			} else {
-				Toast.makeText(RegisterActivity.this, result,
-						Toast.LENGTH_SHORT).show();
-			}
-
 		}
 	}
 

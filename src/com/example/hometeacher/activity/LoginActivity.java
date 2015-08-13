@@ -4,9 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View.OnClickListener;
 import android.view.View;
 import android.view.Window;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.example.hometeacher.R;
@@ -16,6 +19,11 @@ import com.example.hometeacher.util.ZipCompress;
 import com.example.hometeacher.util.ZipDecompress;
 
 public class LoginActivity extends Activity {
+	
+	ImageView iv_show;
+	boolean isShow=false;
+	
+	EditText et_password;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +41,11 @@ public class LoginActivity extends Activity {
 		// TODO Auto-generated method stub
 		RelativeLayout rl_register=(RelativeLayout)findViewById(R.id.rl_login_register);
 		rl_register.setOnClickListener(onClickListener);
+		
+		et_password=(EditText)findViewById(R.id.et_login_password);
+		
+		iv_show=(ImageView)findViewById(R.id.iv_login_show);
+		iv_show.setOnClickListener(onClickListener);
 	}
 
 	OnClickListener onClickListener=new OnClickListener() {
@@ -45,6 +58,17 @@ public class LoginActivity extends Activity {
 			case R.id.rl_login_register:
 				intent=new Intent(LoginActivity.this,RegisterActivity.class);
 				startActivity(intent);
+				break;
+			case R.id.iv_login_show:
+				if(isShow){
+					iv_show.setImageResource(R.drawable.ic_login_show);
+					et_password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+					isShow=false;
+				} else{
+					iv_show.setImageResource(R.drawable.ic_login_noshow);
+					et_password.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+					isShow=true;
+				}
 				break;
 			}
 		}

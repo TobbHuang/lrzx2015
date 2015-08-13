@@ -42,7 +42,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:singleLine="true"
-                    android:text="昵称"
+                    android:text="贾子辉"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 

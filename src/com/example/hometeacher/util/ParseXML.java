@@ -11,7 +11,7 @@ import org.jdom2.input.SAXBuilder;
 import org.xml.sax.InputSource;
 
 public class ParseXML {
-	public static void parseXml(String xmlDoc) throws JDOMException,
+	public static String parseXml(String xmlDoc) throws JDOMException,
 			IOException {
 		// 创建一个新的字符串
 		StringReader read = new StringReader(xmlDoc);
@@ -22,10 +22,10 @@ public class ParseXML {
 
 		Document doc = sax.build(source);
 		Element root = doc.getRootElement();
-		parseElement(root);
+		return parseElement(root);
 	}
 
-	private static void parseElement(Element element) {
+	private static String parseElement(Element element) {
 		// TODO Auto-generated method stub
 		List<Element> elementList = element.getChildren();
 		for (Element e : elementList) {
@@ -33,10 +33,11 @@ public class ParseXML {
 				parseElement(e);
 			} else {
 				String elementName = e.getName();
-				if ("result".equals(elementName)) {
-					System.out.println("result" + e.getValue());
+				if(elementName.equals("OutputData")){
+					return e.getValue();
 				}
 			}
 		}
+		return "error";
 	}
 }

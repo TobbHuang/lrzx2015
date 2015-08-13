@@ -10,6 +10,7 @@ import com.example.hometeacher.util.HttpPost;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -98,15 +99,22 @@ public class MainActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
+			Intent intent;
 			switch (v.getId()) {
 			case R.id.rl_main_head:
 				mDrawerLayout.openDrawer(Gravity.LEFT);
 				break;
 			case R.id.rl_main_msg:
+				intent=new Intent(MainActivity.this,MessageActivity.class);
+				startActivity(intent);
 				break;
 			case R.id.rl_main_match:
+				intent=new Intent(MainActivity.this,MatchActivity.class);
+				startActivity(intent);
 				break;
 			case R.id.rl_main_phone:
+				intent=new Intent(MainActivity.this,PhoneSearchActivity.class);
+				startActivity(intent);
 				break;
 			}
 		}

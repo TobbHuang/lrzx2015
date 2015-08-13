@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="theme">#5D86F2</color>
     <color name="white">#FFFFFF</color>
     <color name="lightTheme">#00AAFF</color>
     <color name="grey">#CCCCCC</color>
+    <color name="darkGrey">#999999</color>
     <color name="lightGrey">#EEEEEE</color>
-    <color name="orange">#FA8E32</color>
+    <color name="orange">#FC9838</color>
     <color name="leftmenu">#637EC1</color>
     <color name="black">#000000</color>
     <color name="green">#3BC861</color>
-    
+    <color name="red">#FA1727</color>
+    <color name="blue">#0099CC</color>
+
 </resources>

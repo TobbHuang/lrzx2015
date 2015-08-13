@@ -11,6 +11,14 @@
         android:layout_height="45dp"
         android:background="@color/theme" >
 
+        <ImageView
+            android:id="@+id/iv_login_leftarrow"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_leftarrow_white" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -53,6 +61,7 @@
             android:background="@color/white" >
 
             <EditText
+                android:id="@+id/et_login_phone"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_centerVertical="true"
@@ -75,16 +84,26 @@
             android:background="@color/white" >
 
             <EditText
+                android:id="@+id/et_login_password"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="50dp"
                 android:background="@color/white"
                 android:hint="请输入密码"
                 android:inputType="textPassword"
                 android:singleLine="true"
                 android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/iv_login_show"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_login_show" />
         </RelativeLayout>
 
         <TextView
