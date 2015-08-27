@@ -5,37 +5,37 @@
     android:background="#637EC1"
     android:clickable="true"
     android:orientation="vertical"
-    tools:context="com.example.hometeacher.fragment.NavigationDrawerFragment" >
+    tools:context="com.example.lrzx2015.fragment.NavigationDrawerFragment" >
 
     <LinearLayout
-        android:id="@+id/ll_leftmenu_login"
+        android:id="@+id/ll_leftmenu_0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
         android:background="@drawable/selector_drawable_leftmenuitem"
-        android:orientation="vertical" >
-
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/ic_leftmenu_head" />
+        android:orientation="horizontal" >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="5dp"
-            android:text="点击登录"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp" />
+            android:layout_gravity="center_vertical"
+            android:text="点击报名"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/ic_leftmenu_rightarrow" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical" >
 
         <TextView
@@ -45,25 +45,18 @@
             android:background="#44F9F9F9" />
 
         <LinearLayout
-            android:id="@+id/ll_leftmenu_wallet"
+            android:id="@+id/ll_leftmenu_1"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/selector_drawable_leftmenuitem"
             android:orientation="horizontal" >
 
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/ic_leftmenu_money" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:text="钱包管理"
+                android:layout_marginLeft="55dp"
+                android:text="凌睿介绍"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
         </LinearLayout>
@@ -76,25 +69,18 @@
             android:background="#44F9F9F9" />
 
         <LinearLayout
-            android:id="@+id/ll_leftmenu_bill"
+            android:id="@+id/ll_leftmenu_2"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/selector_drawable_leftmenuitem"
             android:orientation="horizontal" >
 
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/ic_leftmenu_bill" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:text="历史订单"
+                android:layout_marginLeft="55dp"
+                android:text="指导老师"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
         </LinearLayout>
@@ -107,25 +93,18 @@
             android:background="#44F9F9F9" />
 
         <LinearLayout
-            android:id="@+id/ll_leftmenu_timetable"
+            android:id="@+id/ll_leftmenu_3"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/selector_drawable_leftmenuitem"
             android:orientation="horizontal" >
 
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/ic_leftmenu_timetable" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:text="我的课表"
+                android:layout_marginLeft="55dp"
+                android:text="成员简介"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
         </LinearLayout>
@@ -138,25 +117,18 @@
             android:background="#44F9F9F9" />
 
         <LinearLayout
-            android:id="@+id/ll_leftmenu_account"
+            android:id="@+id/ll_leftmenu_4"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/selector_drawable_leftmenuitem"
             android:orientation="horizontal" >
 
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/ic_leftmenu_account" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:text="账号管理"
+                android:layout_marginLeft="55dp"
+                android:text="项目与竞赛"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
         </LinearLayout>
@@ -169,25 +141,66 @@
             android:background="#44F9F9F9" />
 
         <LinearLayout
-            android:id="@+id/ll_leftmenu_aboutus"
+            android:id="@+id/ll_leftmenu_5"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/selector_drawable_leftmenuitem"
             android:orientation="horizontal" >
 
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/ic_leftmenu_aboutus" />
+                android:layout_marginLeft="55dp"
+                android:text="讲座与培训"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="10dp"
+            android:background="#44F9F9F9" />
+
+        <LinearLayout
+            android:id="@+id/ll_leftmenu_6"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/selector_drawable_leftmenuitem"
+            android:orientation="horizontal" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:text="关于我们"
+                android:layout_marginLeft="55dp"
+                android:text="发展历程"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="10dp"
+            android:background="#44F9F9F9" />
+
+        <LinearLayout
+            android:id="@+id/ll_leftmenu_7"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/selector_drawable_leftmenuitem"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="55dp"
+                android:text="特别放送"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
         </LinearLayout>

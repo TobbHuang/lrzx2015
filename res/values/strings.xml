@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">HomeTeacher</string>
+    <string name="app_name">凌睿招新2015</string>
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
@@ -18,5 +18,8 @@
     <string name="title_activity_phone_search">PhoneSearchActivity</string>
     <string name="title_activity_match">MatchActivity</string>
     <string name="title_activity_location">LocationActivity</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="introduction">\t\t凌睿工作室是电子科技大学优秀工作室，由傅翀老师，钱伟中老师及12级学生杨文元，11级学生暴鹏飞等一行人于2013年创建。\n\t\t凌睿工作室以创新和产品化作为自身发展的鲜明标志，并且十分看重工作室凝聚力和成员之间的团结融洽度。一年以来，秉承“凌厉出鞘，睿意进取”的宗旨，兼顾“安全”这一特色，凌睿研究新技术，参与新项目，并不断进步。\n\t\t目前，凌睿工作室已有内网监控、广告机系统等一系列成熟项目成果。其研究方向覆盖网络安全，系统编程，网页制作，Android开发等多个方向。其广告机系统已投入市场使用，内网监控系统也将不久应用于公司。\n\t\t在工作室所有成员的努力下，凌睿的项目能力和产学研结合能力一直处于创新工坊各大工作室的领先地位，其规模也不断扩大。工作室始终坚持“人品为先，兴趣指引，技术培养”，相信“ 一起玩，一起学”。\n\n工作室目前方向：\n\t\t安卓开发：Android手机软件开发，Java程序设计，J2EE架构与企业级应用开发\n\t\tWindows编程：c/c++/c#程序设计，MFC,WPF，windows驱动开发\n\t\tweb开发：web前端开发技术，网络安全相关技术，PS制图、设计等\n\n\t\t工作室技术方向是但不只是以上三个，欢迎所有新老成员组建新的技术方向、团队。</string>
+    <string name="title_activity_introduction">IntroductionActivity</string>
 
 </resources>

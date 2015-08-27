@@ -1,0 +1,183 @@
+package com.example.hometeacher.activity;
+
+import com.baidu.mapapi.SDKInitializer;
+import com.example.hometeacher.R;
+import com.example.hometeacher.R.layout;
+import com.example.hometeacher.data.Data;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.WindowManager;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+public class MatchActivity extends Activity {
+
+	TextView tv_location, tv_project, tv_sex;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.activity_match);
+
+		IntentFilter filter = new IntentFilter("RefreshMatch");
+		registerReceiver(broadcast, filter);
+
+		initView();
+
+	}
+
+	private void initView() {
+		// TODO Auto-generated method stub
+
+		ImageView iv_back = (ImageView) findViewById(R.id.iv_match_leftarrow);
+		iv_back.setOnClickListener(onClickListener);
+
+		LinearLayout ll_location = (LinearLayout) findViewById(R.id.ll_match_location);
+		ll_location.setOnClickListener(onClickListener);
+		tv_location = (TextView) findViewById(R.id.tv_match_location);
+
+		LinearLayout ll_project = (LinearLayout) findViewById(R.id.ll_match_project);
+		ll_project.setOnClickListener(onClickListener);
+		tv_project = (TextView) findViewById(R.id.tv_match_project);
+
+		LinearLayout ll_sex = (LinearLayout) findViewById(R.id.ll_match_sex);
+		ll_sex.setOnClickListener(onClickListener);
+		tv_sex = (TextView) findViewById(R.id.tv_match_sex);
+	}
+
+	OnClickListener onClickListener = new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			switch (v.getId()) {
+			case R.id.iv_match_leftarrow:
+				finish();
+				break;
+			case R.id.ll_match_location:
+				Intent intent = new Intent(MatchActivity.this,
+						LocationActivity.class);
+				startActivity(intent);
+				break;
+			case R.id.ll_match_project:
+				initProjectDialog();
+				break;
+			case R.id.ll_match_sex:
+				final String[] str = { "男", "女", "男女不限" };
+				Dialog dialog = new AlertDialog.Builder(MatchActivity.this)
+						.setItems(str, new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								tv_sex.setText(str[which]);
+							}
+						}).create();
+				dialog.show();
+				break;
+			}
+		}
+	};
+	
+	void initProjectDialog() {
+		final AlertDialog alertDialog = new AlertDialog.Builder(
+				MatchActivity.this).create();
+		alertDialog.setCanceledOnTouchOutside(true);
+		alertDialog.show();
+		Window window = alertDialog.getWindow();
+		window.setContentView(R.layout.dialog_match_project1);
+
+		WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
+		lp.width = (int) (Data.SCREENWIDTH * 0.6);// 定义宽度
+		lp.height = (int) (Data.SCREENHEIGHT * 0.5);// 定义高度
+
+		alertDialog.getWindow().setAttributes(lp);
+		
+		TextView tv_grade1=(TextView)window.findViewById(R.id.tv_project_grade1);
+		tv_grade1.setOnClickListener(new GradeClickListener(1));
+		
+		TextView tv_grade2=(TextView)window.findViewById(R.id.tv_project_grade2);
+		tv_grade2.setOnClickListener(new GradeClickListener(1));
+		
+		TextView tv_grade3=(TextView)window.findViewById(R.id.tv_project_grade3);
+		tv_grade3.setOnClickListener(new GradeClickListener(1));
+		
+		TextView tv_grade4=(TextView)window.findViewById(R.id.tv_project_grade4);
+		tv_grade4.setOnClickListener(new GradeClickListener(1));
+		
+		TextView tv_grade5=(TextView)window.findViewById(R.id.tv_project_grade5);
+		tv_grade5.setOnClickListener(new GradeClickListener(1));
+		
+		TextView tv_grade6=(TextView)window.findViewById(R.id.tv_project_grade6);
+		tv_grade6.setOnClickListener(new GradeClickListener(1));
+		
+		TextView tv_grade7=(TextView)window.findViewById(R.id.tv_project_grade7);
+		tv_grade7.setOnClickListener(new GradeClickListener(1));
+		
+		TextView tv_grade8=(TextView)window.findViewById(R.id.tv_project_grade8);
+		tv_grade8.setOnClickListener(new GradeClickListener(1));
+		
+		TextView tv_grade9=(TextView)window.findViewById(R.id.tv_project_grade9);
+		tv_grade9.setOnClickListener(new GradeClickListener(1));
+		
+		TextView tv_grade10=(TextView)window.findViewById(R.id.tv_project_grade10);
+		tv_grade10.setOnClickListener(new GradeClickListener(1));
+		
+		TextView tv_grade11=(TextView)window.findViewById(R.id.tv_project_grade11);
+		tv_grade11.setOnClickListener(new GradeClickListener(1));
+		
+		TextView tv_grade12=(TextView)window.findViewById(R.id.tv_project_grade12);
+		tv_grade12.setOnClickListener(new GradeClickListener(1));
+	}
+
+	BroadcastReceiver broadcast = new BroadcastReceiver() {
+
+		@Override
+		public void onReceive(Context arg0, Intent date) {
+			// TODO Auto-generated method stub
+			switch (date.getIntExtra("type", 0)) {
+			case 0:
+				tv_location.setText(date.getStringExtra("data"));
+				break;
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			}
+		}
+
+	};
+	
+	public class GradeClickListener implements OnClickListener{
+		
+		int grade;
+		
+		public GradeClickListener(int grade){
+			this.grade=grade;
+		}
+
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
+
+}
