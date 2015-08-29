@@ -2,7 +2,11 @@ package com.example.lrzx2015.fragment;
 
 import com.example.lrzx2015.R;
 import com.example.lrzx2015.activity.IntroductionActivity;
+import com.example.lrzx2015.activity.LectureActivity;
 import com.example.lrzx2015.activity.MainActivity;
+import com.example.lrzx2015.activity.ProjectActivity;
+import com.example.lrzx2015.activity.ReportActivity;
+import com.example.lrzx2015.activity.TeacherActivity;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -76,23 +80,31 @@ public class NavigationDrawerFragment extends Fragment {
 			Intent intent;
 			switch (v.getId()) {
 			case R.id.ll_leftmenu_0:
+				intent = new Intent(getActivity(), ReportActivity.class);
+				startActivity(intent);
 				closeDrawer();
 				break;
 			case R.id.ll_leftmenu_1:
-				intent=new Intent(getActivity(),IntroductionActivity.class);
+				intent = new Intent(getActivity(), IntroductionActivity.class);
 				startActivity(intent);
 				closeDrawer();
 				break;
 			case R.id.ll_leftmenu_2:
+				intent = new Intent(getActivity(), TeacherActivity.class);
+				startActivity(intent);
 				closeDrawer();
 				break;
 			case R.id.ll_leftmenu_3:
 				closeDrawer();
 				break;
 			case R.id.ll_leftmenu_4:
+				intent = new Intent(getActivity(), ProjectActivity.class);
+				startActivity(intent);
 				closeDrawer();
 				break;
 			case R.id.ll_leftmenu_5:
+				intent = new Intent(getActivity(), LectureActivity.class);
+				startActivity(intent);
 				closeDrawer();
 				break;
 			case R.id.ll_leftmenu_6:

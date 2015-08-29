@@ -35,8 +35,24 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.example.lrzx2015.activity.IntroductionActivity"
+            android:name=".activity.IntroductionActivity"
             android:label="@string/title_activity_introduction" >
+        </activity>
+        <activity
+            android:name=".activity.TeacherActivity"
+            android:label="@string/title_activity_teacher" >
+        </activity>
+        <activity
+            android:name=".activity.ProjectActivity"
+            android:label="@string/title_activity_project" >
+        </activity>
+        <activity
+            android:name=".activity.LectureActivity"
+            android:label="@string/title_activity_lecture" >
+        </activity>
+        <activity
+            android:name="com.example.lrzx2015.activity.ReportActivity"
+            android:label="@string/title_activity_report" >
         </activity>
     </application>
 

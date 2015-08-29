@@ -12,6 +12,13 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.RelativeLayout;
 
+/**
+ * 工作室介绍界面
+ * 
+ * @author Tobb
+ * @Time 2015-08-27
+ * 
+ */
 public class IntroductionActivity extends Activity {
 
 	@Override
