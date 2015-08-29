@@ -1,0 +1,120 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/theme" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="讲座与培训"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_lecture_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/selector_drawable_theme_lighttheme" >
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_leftarrow_white" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="5dp"
+                android:text="\t\t凌睿自创建以来，积极开展学术交流，不断拓宽技术范围。同时我们有幸请到了社会上企业中的优秀从业者，为我们开展了一次次意义丰富的讲座。"
+                android:textSize="15sp" />
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="5dp"
+                android:text="@string/lecture1"
+                android:textSize="15sp"
+                android:layout_marginTop="15dp" />
+            
+            <ImageView 
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/lecture1"
+                android:layout_marginTop="10dp" />
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="5dp"
+                android:text="@string/lecture2"
+                android:textSize="15sp"
+                android:layout_marginTop="15dp" />
+            
+            <ImageView 
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/lecture2"
+                android:layout_marginTop="10dp" />
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="5dp"
+                android:text="@string/lecture3"
+                android:textSize="15sp"
+                android:layout_marginTop="15dp" />
+            
+            <ImageView 
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/lecture3"
+                android:layout_marginTop="10dp" />
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="5dp"
+                android:text="@string/lecture4"
+                android:textSize="15sp"
+                android:layout_marginTop="15dp" />
+            
+            <ImageView 
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/lecture4"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

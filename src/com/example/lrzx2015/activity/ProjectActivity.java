@@ -9,37 +9,37 @@ import android.view.Window;
 import android.widget.RelativeLayout;
 
 /**
- * 工作室介绍界面
+ * 项目与竞赛
  * 
  * @author Tobb
- * @Time 2015-08-27
+ * @Time 2015-08-29
  * 
  */
-public class IntroductionActivity extends Activity {
+public class ProjectActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_introduction);
+		setContentView(R.layout.activity_project);
 		
 		initView();
 		
 	}
-
+	
 	private void initView() {
 		// TODO Auto-generated method stub
-		RelativeLayout rl_back=(RelativeLayout)findViewById(R.id.rl_introduction_back);
+		RelativeLayout rl_back=(RelativeLayout)findViewById(R.id.rl_project_back);
 		rl_back.setOnClickListener(onClickListener);
 	}
-	
+
 	OnClickListener onClickListener=new OnClickListener() {
 		
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
 			switch(v.getId()){
-			case R.id.rl_introduction_back:
+			case R.id.rl_project_back:
 				finish();
 				break;
 			}

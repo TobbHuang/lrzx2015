@@ -8,20 +8,13 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.RelativeLayout;
 
-/**
- * 工作室介绍界面
- * 
- * @author Tobb
- * @Time 2015-08-27
- * 
- */
-public class IntroductionActivity extends Activity {
+public class TeacherActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_introduction);
+		setContentView(R.layout.activity_teacher);
 		
 		initView();
 		
@@ -29,7 +22,7 @@ public class IntroductionActivity extends Activity {
 
 	private void initView() {
 		// TODO Auto-generated method stub
-		RelativeLayout rl_back=(RelativeLayout)findViewById(R.id.rl_introduction_back);
+		RelativeLayout rl_back=(RelativeLayout)findViewById(R.id.rl_teacher_back);
 		rl_back.setOnClickListener(onClickListener);
 	}
 	
@@ -39,7 +32,7 @@ public class IntroductionActivity extends Activity {
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
 			switch(v.getId()){
-			case R.id.rl_introduction_back:
+			case R.id.rl_teacher_back:
 				finish();
 				break;
 			}

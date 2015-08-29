@@ -4,7 +4,6 @@ import com.example.lrzx2015.R;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View.OnClickListener;
 import android.view.Gravity;
@@ -50,7 +49,6 @@ public class MainActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			Intent intent;
 			switch (v.getId()) {
 			case R.id.rl_mainpage_menu:
 				mDrawerLayout.openDrawer(Gravity.LEFT);

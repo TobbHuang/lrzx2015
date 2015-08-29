@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context="com.example.lrzx2015.activity.MainActivity$PlaceholderFragment" >
+    tools:context="${relativePackage}.${activityClass}" >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,20 +15,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="凌睿介绍"
+            android:text="项目与竞赛"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
         <RelativeLayout
+            android:id="@+id/rl_project_back"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/selector_drawable_theme_lighttheme" >
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_centerInParent="true"
-                android:src="@drawable/ic_menu" />
+                android:src="@drawable/ic_leftarrow_white" />
         </RelativeLayout>
     </RelativeLayout>
 
@@ -38,7 +39,9 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:orientation="vertical" >
 
             <TextView
@@ -48,32 +51,32 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:lineSpacingExtra="5dp"
-                android:text="@string/xuanchuan"
+                android:text="\t\t工作室已承接中国工程物理研究院与多家公司的大型项目，其中包括中国工程物理研究院项目（军工）、舆论管控（国安）、内网监控系统、智能广告机管理平台、速最科技公司生产销售管理系统等。目前工作室已经项目与法国公司合作，具体合作项目人在筹备中，不久即将实施。"
                 android:textSize="15sp" />
-            
-            <LinearLayout 
+
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="15dp" >
-                
-                <ImageView 
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:src="@drawable/qq2weima" />
-                
-                <ImageView 
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:src="@drawable/wechat2weima" />
-            </LinearLayout>
+                android:layout_height="280dp"
+                android:src="@drawable/project1" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:src="@drawable/project2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:lineSpacingExtra="3dp"
+                android:text="\t\t工作室成员凭借自身努力，在过去一年半的时间里也获得了丰富奖项。"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:src="@drawable/game" />
 
             <TextView
                 android:layout_width="wrap_content"

@@ -4,9 +4,11 @@ import com.example.lrzx2015.R;
 import com.example.lrzx2015.activity.IntroductionActivity;
 import com.example.lrzx2015.activity.LectureActivity;
 import com.example.lrzx2015.activity.MainActivity;
+import com.example.lrzx2015.activity.MemberActivity;
 import com.example.lrzx2015.activity.ProjectActivity;
 import com.example.lrzx2015.activity.ReportActivity;
 import com.example.lrzx2015.activity.TeacherActivity;
+import com.example.lrzx2015.activity.TebiefangsongActivity;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -17,7 +19,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 /**
  * 侧拉fragment
@@ -65,10 +66,6 @@ public class NavigationDrawerFragment extends Fragment {
 				.findViewById(R.id.ll_leftmenu_6);
 		ll_6.setOnClickListener(onClickListener);
 
-		LinearLayout ll_7 = (LinearLayout) view
-				.findViewById(R.id.ll_leftmenu_7);
-		ll_7.setOnClickListener(onClickListener);
-
 		return view;
 	}
 
@@ -95,6 +92,8 @@ public class NavigationDrawerFragment extends Fragment {
 				closeDrawer();
 				break;
 			case R.id.ll_leftmenu_3:
+				intent = new Intent(getActivity(), MemberActivity.class);
+				startActivity(intent);
 				closeDrawer();
 				break;
 			case R.id.ll_leftmenu_4:
@@ -108,9 +107,8 @@ public class NavigationDrawerFragment extends Fragment {
 				closeDrawer();
 				break;
 			case R.id.ll_leftmenu_6:
-				closeDrawer();
-				break;
-			case R.id.ll_leftmenu_7:
+				intent = new Intent(getActivity(), TebiefangsongActivity.class);
+				startActivity(intent);
 				closeDrawer();
 				break;
 			}

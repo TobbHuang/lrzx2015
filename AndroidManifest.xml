@@ -51,8 +51,16 @@
             android:label="@string/title_activity_lecture" >
         </activity>
         <activity
-            android:name="com.example.lrzx2015.activity.ReportActivity"
+            android:name=".activity.ReportActivity"
             android:label="@string/title_activity_report" >
+        </activity>
+        <activity
+            android:name=".activity.TebiefangsongActivity"
+            android:label="@string/title_activity_tebiefangsong" >
+        </activity>
+        <activity
+            android:name="com.example.lrzx2015.activity.MemberActivity"
+            android:label="@string/title_activity_member" >
         </activity>
     </application>
 

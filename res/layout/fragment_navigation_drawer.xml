@@ -176,30 +176,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="55dp"
-                android:text="发展历程"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="10dp"
-            android:background="#44F9F9F9" />
-
-        <LinearLayout
-            android:id="@+id/ll_leftmenu_7"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/selector_drawable_leftmenuitem"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="55dp"
                 android:text="特别放送"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
