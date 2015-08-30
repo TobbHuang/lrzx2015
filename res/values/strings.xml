@@ -37,6 +37,29 @@
     <string name="wangbintao">王彬陶：2012级3020班学生\n工作室第一批成员\n曾获得人民二等奖学金\n技术方向：C#开发、Windows编程</string>
     <string name="zhanglu">2011级2020班学生\n计算机、英语双学位\n中国共产党党员\n技术方向：人工智能、深度学习、神经认知科学</string>
     <string name="lihaoxing">2012级3030班学生\n工作室骨干\n中共预备党员\n校青协百佳青年志愿者\n学院分团委优秀部员\n曾获得国家奖学金\n党校“中国梦”配乐朗诵比赛三等奖\n技术方向：嵌入式Linux下C程序和驱动开发</string>
+    <string name="pengyicheng">彭一城：2012级7010班学生\n工作室第二届第二负责人\n入党积极分子\n曾任青志协办公室部长\n曾获“百佳青年志愿者”称号\n“成电杯”新生辩论赛最佳辩手</string>
+    <string name="heyuwei">何雨薇：2013级0501班（网络安全）\n第二届第一负责人\n入党积极分子\n辅导员助理\n曾获“人民奖学金二等”\n长虹杯特等奖\n社会实践经验比较丰富\n技术方向：网页、美工</string>
+    <string name="lianghaipeng">梁海鹏：2013级0101班学生\n网络安全与网页设计组成员\n工作室第二批成员\n技术方向：C、网页制作</string>
+    <string name="lizhaoning">李赵宁：2013级0601班学生\nWindows编程组组长\n曾获人民二等奖学金\n技术方向：windows编程，网络编程</string>
+    <string name="liuzhaoyi">刘钊祎：2013级0203班学生\n14级0201班导生\n专业排名第二、年级排名前3%\n曾获人民特等奖学金\n全国科技创新大赛一等奖\n四川省红十字青年代表\n技术方向：数据挖掘、机器学习</string>
+    <string name="humiao">胡淼：2011级学生3020班学委\n曾获得国家励志奖学金\n足球狂热爱好者\n技术方向：\n安卓系统安全，数学建模，GIS开发</string>
+    <string name="wangyu">王宇 ：2011级3030班学生\n人民奖学金二等\n国家励志奖学金\n东方通软件设计大赛三等奖\n前五学期成绩为专业10%\n参与了项目“口袋电科”APP、长虹新智能研究所“居家宜”APP\n技术方向：Android开发</string>
+    <string name="caochan">曹灿:2011级3020班学生\n入党积极分子\n大一学年获人民三等奖学金\n大二学年获人民二等奖学金\n爱好：羽毛球、乒乓球\n技术方向：C++</string>
+    <string name="huangyafei">黄亚菲：2013级0401班（大型主机）\n第三届第二负责人\n专业第二\n院青年志愿者协会队长\n院辩论队成员 获优秀辩手\n曾获东莞高新区企业奖学金\n曾获校优秀暑期社会实践个人\n曾获校百佳优秀志愿者\n技术方向：安卓</string>
+    <string name="taowenyuan">陶文元：2013级0203班学生\n  大一下学期年级排名第八\n运动会跳高项目第二名\n曾参加电子科大数学建模比赛\n技术方向：c语言、java,windows\n</string>
+    <string name="qiancan">钱璨：2013级0201班学生\n担任班级学习委员\n人民奖学金二等\n入党积极分子\n分团委学生会优秀部员\n信软学院第二届英语演讲比赛负责人\n暑期社会实践校级优秀个人\n“筑梦”支教队成员\n学院迎新优秀志愿者\n曾参与掌中宝贷款平台、生日提醒系统等项目\n技术方向：Android，Web</string>
+    <string name="renyuanhang">任远航\n2013级0102班学生\n原网管会成员\n曾获国家励志奖学金\n技术方向：Android开发</string>
+    <string name="huangtao">黄涛：2013级0203班学生\n凌睿工作室Android组组长\n曾获人民一等奖学金\n技术方向：Android开发</string>
+    <string name="suheng">苏恒 2013级0101班学生\n现任工作室组织部部长\n擅长各种棋类、牌类游戏\n爱好历史文学，羽毛球，三国杀\n网页网安组成员\n技术方向：信息安全，web前端开发</string>
+    <string name="jiazihui">贾子辉：2013级0601班学生\n凌睿工作室成员，现任网安组组长\n曾获人民奖学金三等\n技术方向：网页制作</string>
+    <string name="xiaozhangjin">肖彰瑾： 2013级0601班学生\n担任班级班长\n工作室windows小组成员，宣传部部员\n曾作为队员获得新生篮球赛团体第一名\n凌睿工作室形象负责人\n技术方向：C++，接口设计</string>
+    <string name="yangyang">杨洋：2013级0302班学生\n工作室美工组组长\n学院新闻宣传中心成员\n获2013-2014”优秀部员”\n获学院三人篮球赛第4名\n技术方向：美工设计、PS、网页</string>
+    <string name="qiutong">邱童：2013级0402班学生\n工作室方向网络安全\n兴趣UNIX\n曾获2013-2014年度国家奖学金\n比较喜欢打牌，看剧\n技术方向：网络安全</string>
+    <string name="zhaojin">赵菁：2013级0701班学生\n曾担任英语委员\n参加过“东方通”杯软件设计比赛\n技术方向：美工</string>
+    <string name="weilai">魏来：2013级0801班学生\n担任班级英语委员\n曾获全院“致未来的你”英语演讲比赛第一名\n曾获人民奖学金\n技术方向：美工，UI设计</string>
+    <string name="qiushilin">邱士林:2013级0101班学生\n现任宣传部部长\n网安组成员\n担任班级团支书\n预备党员\n院青志协成员\n曾获国家励志奖学金\n 技术方向：网络安全</string>
+    <string name="wangpin">汪聘：电子科大信软学院研二学生\n喜爱篮球，乒乓球，羽毛球，看书\n平时对各种科学技术充满好奇\n喜欢广结朋友\n技术方向：Android开发</string>
+    <string name="zhuqinqin">朱晴晴：2012级2020班学生\n担任学习部副部长\n班级英语委员\n12级党支部宣传委员\n曾获“成电心，信软情”演讲比赛二等奖\n曾获长虹杯软件设计大赛优胜奖\n校级优秀实践个人\n国家励志奖学金\n技术方向：Windows编程</string>
 
     <!-- 自动生成 -->
     <string name="app_name">凌睿招新2015</string>

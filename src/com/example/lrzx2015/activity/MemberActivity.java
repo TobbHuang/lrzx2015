@@ -8,6 +8,13 @@ import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.RelativeLayout;
 
+/**
+ * 成员简介
+ * 
+ * @author Tobb
+ * @Time 2015-08-29
+ * 
+ */
 public class MemberActivity extends Activity {
 
 	@Override

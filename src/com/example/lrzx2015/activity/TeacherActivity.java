@@ -8,6 +8,13 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.RelativeLayout;
 
+/**
+ * 指导老师
+ * 
+ * @author Tobb
+ * @Time 2015-08-27
+ * 
+ */
 public class TeacherActivity extends Activity {
 
 	@Override
