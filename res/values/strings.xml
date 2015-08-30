@@ -35,8 +35,8 @@
     <string name="zhanghao">张浩：2012级1030班学生\n工作室网页组组长\n学院新闻中心主任\n负责全院的新闻以及各大平台的宣传工作\n小提琴7级\n技术方向：网页制作</string>
     <string name="xuhua">徐华：2012级2030班学生\n网络安全组\n网页设计组组长\n工作室主要负责人之一\n技术方向：安卓，Java后端</string>
     <string name="wangbintao">王彬陶：2012级3020班学生\n工作室第一批成员\n曾获得人民二等奖学金\n技术方向：C#开发、Windows编程</string>
-    <string name="zhanglu">2011级2020班学生\n计算机、英语双学位\n中国共产党党员\n技术方向：人工智能、深度学习、神经认知科学</string>
-    <string name="lihaoxing">2012级3030班学生\n工作室骨干\n中共预备党员\n校青协百佳青年志愿者\n学院分团委优秀部员\n曾获得国家奖学金\n党校“中国梦”配乐朗诵比赛三等奖\n技术方向：嵌入式Linux下C程序和驱动开发</string>
+    <string name="zhanglu">张路：2011级2020班学生\n计算机、英语双学位\n中国共产党党员\n技术方向：人工智能、深度学习、神经认知科学</string>
+    <string name="lihaoxing">李昊星：2012级3030班学生\n工作室骨干\n中共预备党员\n校青协百佳青年志愿者\n学院分团委优秀部员\n曾获得国家奖学金\n党校“中国梦”配乐朗诵比赛三等奖\n技术方向：嵌入式Linux下C程序和驱动开发</string>
     <string name="pengyicheng">彭一城：2012级7010班学生\n工作室第二届第二负责人\n入党积极分子\n曾任青志协办公室部长\n曾获“百佳青年志愿者”称号\n“成电杯”新生辩论赛最佳辩手</string>
     <string name="heyuwei">何雨薇：2013级0501班（网络安全）\n第二届第一负责人\n入党积极分子\n辅导员助理\n曾获“人民奖学金二等”\n长虹杯特等奖\n社会实践经验比较丰富\n技术方向：网页、美工</string>
     <string name="lianghaipeng">梁海鹏：2013级0101班学生\n网络安全与网页设计组成员\n工作室第二批成员\n技术方向：C、网页制作</string>
@@ -87,5 +87,7 @@
     <string name="title_activity_report">ReportActivity</string>
     <string name="title_activity_tebiefangsong">TebiefangsongActivity</string>
     <string name="title_activity_member">MemberActivity</string>
+    <string name="title_activity_member1">Member1Activity</string>
+    <string name="title_activity_member2">Member2Activity</string>
 
 </resources>

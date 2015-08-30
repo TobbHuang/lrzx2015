@@ -4,6 +4,7 @@ import com.example.lrzx2015.R;
 import com.example.lrzx2015.activity.IntroductionActivity;
 import com.example.lrzx2015.activity.LectureActivity;
 import com.example.lrzx2015.activity.MainActivity;
+import com.example.lrzx2015.activity.Member1Activity;
 import com.example.lrzx2015.activity.MemberActivity;
 import com.example.lrzx2015.activity.ProjectActivity;
 import com.example.lrzx2015.activity.ReportActivity;
@@ -92,7 +93,7 @@ public class NavigationDrawerFragment extends Fragment {
 				closeDrawer();
 				break;
 			case R.id.ll_leftmenu_3:
-				intent = new Intent(getActivity(), MemberActivity.class);
+				intent = new Intent(getActivity(), Member1Activity.class);
 				startActivity(intent);
 				closeDrawer();
 				break;
